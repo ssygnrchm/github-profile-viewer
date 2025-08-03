@@ -138,6 +138,8 @@ h1 {
   background-color: #5a6268;
 }
 
+/* src/App.css - Add these styles to the end */
+
 .loading-message {
   color: #007bff;
   margin-top: 20px;

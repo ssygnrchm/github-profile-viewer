@@ -1,20 +1,21 @@
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import UserProfilePage from './components/UserProfilePage';
 import RepoDetailsPage from './components/RepoDetailsPage';
-import './App.css'; // Keep the main CSS
+import NotFoundPage from './components/NotFoundPage'; // New import
+import './App.css';
 
 function App() {
   return (
-    <Router> {/* BrowserRouter wraps our entire application */}
-      <div className="app-main-container"> {/* A container for global styling */}
-        <Routes> {/* Routes component defines individual routes */}
+    <Router>
+      <div className="app-main-container">
+        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/user/:username" element={<UserProfilePage />} />
           <Route path="/user/:username/:repoName" element={<RepoDetailsPage />} />
-          {/* Optional: Add a catch-all for 404 Not Found pages */}
-          <Route path="*" element={<h2 style={{ marginTop: '50px' }}>404 - Page Not Found</h2>} />
+          <Route path="*" element={<NotFoundPage />} /> {/* Catch-all route for 404 */}
         </Routes>
       </div>
     </Router>
